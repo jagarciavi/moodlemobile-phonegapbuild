@@ -9,11 +9,11 @@
     <name>iRiego e-learning</name>
 
     <description>
-        Moodle official app
+        Aplicación para la plataforma de formación de iRiego
     </description>
 
-    <author href="http://moodle.com" email="mobile@moodle.com">
-        Moodle Mobile team
+    <author href="http://iriego.es" email="soporte@iriego.es">
+        El equipo de desarrolladores de iRiego
     </author>
 
     <edit-config target="CFBundleShortVersionString" file="*-Info.plist" mode="merge">
@@ -158,9 +158,13 @@
         <param name="ANDROID_SUPPORT_VERSION" value="27.1.0" />
     </gap:plugin>
 
-    <edit-config file="AndroidManifest.xml" target="/manifest/application/activity" mode="merge">
+    <gap:config-file platform="android" parent="/manifest">
+         <application android:debuggable="true" />
+    </gap:config-file>
+
+    <!--<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='Moodle']" mode="merge">
         <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|screenLayout|smallestScreenSize" android:debuggable="true"></activity>
-    </edit-config>
+    </edit-config>-->
 
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
